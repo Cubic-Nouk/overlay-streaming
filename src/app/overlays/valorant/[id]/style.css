@@ -1,0 +1,17 @@
+p {
+    background-color: white;
+    color: red;
+    animation: test 3s linear infinite;
+    transition: 1s;
+    height: 100px;
+    font-size: 44px;
+}
+
+@keyframes test {
+    from {
+        width: 300px;
+    }
+    to {
+        width: 500px;
+    }
+}

@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 import axios from 'axios'
-import ValorantUserModel from '@/src/model/valorant_user_model';
+import ValorantUserModel from '@/src/model/valorant_user.model';
 
 const defaultValorantUser: ValorantUserModel = {
   account: {

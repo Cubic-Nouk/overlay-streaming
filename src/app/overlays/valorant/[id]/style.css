@@ -1,17 +1,146 @@
-p {
-    background-color: white;
-    color: red;
-    animation: test 3s linear infinite;
-    transition: 1s;
-    height: 100px;
-    font-size: 44px;
+@font-face {
+    font-family: "Rubik", sans-serif;
+    src: url("../../../../../public/fonts/Rubik-VariableFont_wght.ttf");
 }
 
-@keyframes test {
+.overlay {
+    display: flex;
+    align-items: center;
+}
+
+.content {
+    z-index: 1;
+}
+
+.stats {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(94deg, rgba(23, 23, 23, 0.90) 15%, rgba(23, 23, 23, 0.50) 85%, rgba(23, 23, 23, 0.00) 100%);
+    z-index: -1;
+}
+
+.stats .category {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    letter-spacing: 2px;
+}
+
+.stats .category:not(:last-child) {
+    margin-right: 22px;
+}
+
+.stats .category p {
+    margin: 0px 0px 0px 0px;
+    text-transform: uppercase;
+}
+
+.stats .category .title {
+    font-family: "Rubik";
+    font-weight: 600;
+    color: #DDD;
+    margin-bottom: 6px;
+    font-size: 20px;
+}
+
+.stats .category .rank {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Rubik";
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+}
+
+.stats .category .rank p:not(:last-child) {
+    margin-right: 4px;
+}
+
+.stats .category #rr-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: calc(fit-content + 12px);
+    overflow: hidden;
+    font-family: "Rubik";
+    font-weight: 800;
+    font-size: 24px;
+    color: white;
+    transition: 2s;
+}
+
+#actual-down-first-digit {
+    animation: down-initialize 0.2s linear;
+}
+
+#actual-up-first-digit {
+    animation: up-initialize 0.2s linear;
+}
+
+#move-down-first-digit {
+    position: absolute;
+    left: 18px;
+    animation: move-down 0.2s linear forwards;
+}
+
+#move-up-first-digit {
+    position: absolute;
+    left: 18px;
+    animation: move-up 0.2s linear forwards;
+}
+
+#actual-down-second-digit {
+    animation: down-initialize 0.2s linear;
+}
+
+#actual-up-second-digit {
+    animation: up-initialize 0.2s linear;
+}
+
+#move-down-second-digit {
+    position: absolute;
+    animation: move-down 0.2s linear forwards;
+}
+
+#move-up-second-digit {
+    position: absolute;
+    animation: move-up 0.2s linear forwards;
+}
+
+@keyframes up-initialize {
     from {
-        width: 300px;
+        transform: translateY(100%);
     }
     to {
-        width: 500px;
+        transform: translateY(0);
+    }
+}
+
+@keyframes move-up {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes down-initialize {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes move-down {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
     }
 }

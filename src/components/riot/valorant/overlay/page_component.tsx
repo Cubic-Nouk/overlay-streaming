@@ -3,7 +3,7 @@
 import React from 'react'
 import HelloWorldComponent from '../../search_bar_riot_user';
 import { useState } from 'react';
-import ValorantUserModel from '@/src/model/valorant_user_model';
+import ValorantUserModel from '@/src/model/valorant_user.model';
 
 function ValorantOverlayPage() {
   const [valorantUser, setValorantUser] = useState<ValorantUserModel>();

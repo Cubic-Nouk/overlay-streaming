@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'
 import axios from 'axios';
-import ValorantUserModel from '@/src/model/valorant_user_model';
+import ValorantUserModel from '@/src/model/valorant_user.model';
 
 function HelloWorldComponent({ onDataFromChild }: {onDataFromChild: Function}) {
   const [riotId, setRiotId] = useState<string>('');
